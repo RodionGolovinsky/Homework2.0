@@ -12,10 +12,10 @@ public class Main111 {
         Scanner scanner2 = new Scanner(System.in);
         String name2 = scanner2.nextLine();
             FileReader reader = new FileReader(name1);
-        PrintWriter writer = new PrintWriter(name2, "UTF-8");
+        PrintWriter writer = new PrintWriter(name2 );//"UTF-8"
             Scanner scan = new Scanner(reader);
             Stack<Integer> stack = new Stack<>();
-            int c;
+            //int c;
         while (scan.hasNext()) {
             int number = scan.nextInt();
             if (number == 0){

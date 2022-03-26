@@ -14,6 +14,6 @@ public class Main311 {
         System.out.println("Print File? YES/NO");
         name = br.readLine();
         if (name.equals("YES"))
-            while ((c = fin.read()) != -1) System.out.print((char) c);
+            while ((c = fin.read()) != -1) System.out.print((char)c);
     }
 }
