@@ -11,12 +11,12 @@ public class Main321 {
         Scanner scanner2 = new Scanner(System.in);
         String name2 = scanner2.nextLine();
         FileReader reader = new FileReader(name1);
+        LineNumberReader lineNumberReader = new LineNumberReader(reader);
         Scanner scanner3 = new Scanner(reader);
         PrintWriter writer = new PrintWriter(name2, "UTF-8");
         int k = 0;
-        while (scanner3.hasNext()) {
-            k = k + 1;
-            scanner3.next();
+        while (lineNumberReader.readLine()!=null) {
+            k += 1;
         }
         reader.close();
         writer.print("Общее количество строк: ");

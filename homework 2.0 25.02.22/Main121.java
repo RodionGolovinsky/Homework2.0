@@ -2,9 +2,9 @@
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
+
+import static java.lang.Integer.valueOf;
 
 public class Main121 {
     public static void main(String[] args) throws FileNotFoundException {
@@ -17,16 +17,21 @@ public class Main121 {
         while (scan.hasNext()) {
             set.add(scan.nextLine());
         }
-        String[] array = (String[]) set.toArray();
-        int[] array1 = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = String.valueOf(array[i].length());
+        Object[] objects = set.toArray();
+        String[] strings = new String[objects.length];
+        for (int i = 0; i < objects.length; i++) {
+            strings[i] = (String) objects[i];
+        }
+
+        int[] array1 = new int[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            array1[i] = strings[i].length();
         }
         Arrays.sort(array1);
         for (int i = 0; i < array1.length; i++) {
-            for (int k = 0; k < array.length; k++) {
-                if (array[k].length() == array1[i]) {
-                    System.out.println(array[k]);
+            for (int k = 0; k < strings.length; k++) {
+                if (strings[k].length() == array1[i]) {
+                    System.out.println(strings[k]);
                 }
             }
         }

@@ -1,5 +1,5 @@
 
-
+/*
 import java.io.*;
 import java.util.Scanner;
 
@@ -14,21 +14,21 @@ public class Main322 {
         FileReader reader = new FileReader(name1);
         Scanner scanner3 = new Scanner(reader);
         PrintWriter writer = new PrintWriter(name2, "UTF-8");
-        while (scanner3.hasNextLine()){
-            int max = 0;
-            String string = null;
-            String word = null;
-            while (scanner3.hasNext()){
+        String word;
+        int max;
+            while (scanner3.hasNext()) {
                 word = scanner3.next();
                 int length = word.length();
-                if (length>max){
+                if (length > max) {
                     max = length;
                     string = word;
                 }
             }
             writer.println(word);
-        }
+
         reader.close();
         writer.close();
     }
 }
+
+ */
