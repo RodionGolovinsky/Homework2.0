@@ -1,12 +1,18 @@
 package main221;
 
 public class CommandManeger {
-Command hello;
+    Command helloWorld;
+    Command simpleHello;
 
-    public CommandManeger(Command hello) {
-        this.hello = hello;
+    public CommandManeger(Command helloWorld, Command simpleHello) {
+        this.helloWorld = helloWorld;
+        this.simpleHello = simpleHello;
     }
-    public void setHello(){
-       hello.execute();
+    public void setHelloWorld() {
+        helloWorld.execute();
     }
+    public void setSimpleHello(){
+        simpleHello.execute();
+    }
+
 }

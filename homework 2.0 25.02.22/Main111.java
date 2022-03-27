@@ -11,21 +11,21 @@ public class Main111 {
         System.out.println("Введите путь к файлу, в который будут записываться данные");
         Scanner scanner2 = new Scanner(System.in);
         String name2 = scanner2.nextLine();
-            FileReader reader = new FileReader(name1);
-        PrintWriter writer = new PrintWriter(name2 );//"UTF-8"
-            Scanner scan = new Scanner(reader);
-            Stack<Integer> stack = new Stack<>();
-            //int c;
+        FileReader reader = new FileReader(name1);
+        PrintWriter writer = new PrintWriter(name2);//"UTF-8"
+        Scanner scan = new Scanner(reader);
+        Stack<Integer> stack = new Stack<>();
+        //int c;
         while (scan.hasNext()) {
             int number = scan.nextInt();
-            if (number == 0){
+            if (number == 0) {
                 break;
-            } else if(number>0) {
+            } else if (number > 0) {
                 stack.push(number);
             }
         }
         reader.close();
-        while (stack.size() != 0){
+        while (stack.size() != 0) {
             Integer a = stack.pop();
             writer.println(a);
         }
