@@ -3,28 +3,27 @@
 import java.util.Scanner;
 
 public class Main213 {
-    public static void main(String[] args) throws ExceptionNotInt {
-        //System.out.println("Введите строку, затем нажмите Enter и введите целое положительное число:");
+    public static void main(String[] args) throws NotIntException {
         Scanner scanner = new Scanner(System.in);
-        String command = scanner.nextLine();
-        String text = scanner.nextLine();
-        if (command.equals("repeat") | command.equals("repeat ")) {
-            if (scanner.hasNextInt()) {
-                int number = scanner.nextInt();
-                if (number > 0) {
-                    for (int i = 0; i < number; i++) {
-                        System.out.println(text);
-                    }
+        String userInput = scanner.nextLine();
+        String[] inputArray = userInput.split(" ");
+        if (inputArray[0].equals("repeat") | inputArray[0].equals("repeat ")) {
+            int count = 0;
+            try {
+                count = Integer.parseInt(inputArray[inputArray.length - 1]);
+            } catch (NumberFormatException e) {
+                System.err.println("Вы ввели не целочисленное значние!");
+
+            }
+            for (int k = 0; k < count; k++) {
+                for (int i = 1; i < inputArray.length - 1; i++) {
+                    System.out.print(inputArray[i]);
                 }
-            } else {
-                throw new ExceptionNotInt("Вы ввели не целое положительное число");
+                System.out.println("\n");
             }
         }
     }
 
-    public static class ExceptionNotInt extends Exception {
-        public ExceptionNotInt(String message) {
-            System.err.println(message);
-        }
-    }
 }
+
+
