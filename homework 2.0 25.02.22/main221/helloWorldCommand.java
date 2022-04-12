@@ -1,15 +1,21 @@
 package main221;
 
 public class helloWorldCommand implements Command {
-private Printer printer;
+    private Printer printer;
 
     public helloWorldCommand(Printer printer) {
 
-        this.printer=printer;
+        this.printer = printer;
     }
 
     @Override
     public void execute() {
+
         printer.printHelloWorld();
+    }
+
+    @Override
+    public void execute(String arguments) {
+
     }
 }

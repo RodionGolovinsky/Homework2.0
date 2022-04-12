@@ -5,31 +5,35 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Main221 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String text = scanner.nextLine();
-        //System.out.println(text);
-        ArrayList<String> list = new ArrayList<>();
-        while (scanner.hasNextLine()){
-            list.add(scanner.nextLine());
-        }
-        Object[] objects = list.toArray();
-        String[] strings = new String[objects.length];
-        for (int i = 0; i < objects.length; i++) {
-            strings[i] = (String) objects[i];
-        } //converting command arguments to an array of strings
+        String[] userInput = text.split(" ", 2);
+
         Printer printer = new Printer();
-        CommandManeger cm = new CommandManeger(new helloWorldCommand(printer),new helloSimpleCommand(printer));
-        if (text.equals("hello")){
-           cm.setHelloWorld();
-       }
-        else {
-            cm.setSimpleHello();
-            for (String s : strings) {
-                System.out.print(s);
-            }
+        boolean errorExist = false;
+        String arguments = null;
+        try {
+            arguments = userInput[1];
+        } catch (ArrayIndexOutOfBoundsException e) {
+           errorExist = true;
         }
-}}
+        CommandManeger cm = new CommandManeger(new helloWorldCommand(printer), new helloSimpleCommand(printer), new repeatCommand(printer, arguments));
+        if (userInput[0].equals("hello") && errorExist ) {
+            cm.setHelloWorld();
+        } else if (userInput[0].equals("hello") && !errorExist ){
+            cm.setSimpleHello();
+            System.out.println(arguments);
+        }
+        if (userInput[0].equals("repeat") && !errorExist) {
+
+            cm.repeatSameWords(arguments);
+
+        }
+
+    }
+}
 

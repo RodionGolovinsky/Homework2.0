@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 public class Main213 {
-    public static void main(String[] args) throws NotIntException {
+    public static void main(String[] args) throws NumberFormatException {
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] inputArray = userInput.split(" ");
@@ -17,9 +17,9 @@ public class Main213 {
             }
             for (int k = 0; k < count; k++) {
                 for (int i = 1; i < inputArray.length - 1; i++) {
-                    System.out.print(inputArray[i]);
+                    System.out.print(inputArray[i]+" ");
                 }
-                System.out.println("\n");
+                System.out.print("\n");
             }
         }
     }

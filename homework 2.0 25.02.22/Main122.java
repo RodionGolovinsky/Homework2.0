@@ -13,7 +13,7 @@ public class Main122 {
         FileReader fr = new FileReader(file1);
         PrintWriter pw = new PrintWriter(file2, "UTF-8");
         Scanner sc = new Scanner(fr);
-        LinkedHashSet<String> hashSet = new LinkedHashSet<>();
+        Set<String> hashSet = new HashSet<>();
         while (sc.hasNext()) {
             String a = sc.nextLine();
             hashSet.add(a);
