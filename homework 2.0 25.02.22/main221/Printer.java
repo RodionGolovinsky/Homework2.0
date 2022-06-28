@@ -19,7 +19,7 @@ public class Printer {
                 System.out.print("\n");
             }
         }catch (NumberFormatException e){
-            System.err.println("НЕn обнаружено целочисленного значения для того, чтобы задать кол-во повторений!");
+            System.err.println("НЕ обнаружено целочисленного значения для того, чтобы задать кол-во повторений!");
         }
     }
 }
